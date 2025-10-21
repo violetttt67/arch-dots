@@ -1,0 +1,96 @@
+{
+    "layer": "top",
+    "spacing": 0,
+    "height": 0,
+
+    "margin-top": 5,
+    "margin-right": 5,
+    "margin-left": 5,
+
+    "modules-left": [
+        "custom/launcher",
+        "sway/workspaces"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "tray",
+		"sway/language",
+        "cpu",
+        "memory",
+
+        "network",
+        "pulseaudio",
+    ],
+
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "kitty",
+        "on-click-right": "killall kitty",
+        "tooltip": false
+    },
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "show-special": true,
+        "special-visible-only": false,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "active-only": false,
+        "on-click": "activate"
+    },
+
+    "tray": {
+        "spacing": 10,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%H:%M %a %d.%m.%Y}",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "format": "cpu {usage}%",
+        "interval": 2,
+
+        "states": {
+            "critical": 90
+        }
+    },
+
+    "memory": {
+        "format": "mem {percentage}%",
+        "interval": 2,
+
+        "states": {
+            "critical": 80
+        }
+    },
+
+    "network": {
+        "format-wifi" : "wifi {bandwidthDownBits}",
+        "format-ethernet": "enth {bandwidthDownBits}",
+        "format-disconnected" : "no network",
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 150,
+        "format": "vol {volume}%",
+        "format-bluetooth": "vol {volume}%",
+        "nospacing": 1,
+        "on-click": "pwvucontrol",
+        "tooltip": false
+    },
+
+	"sway/language": {
+		"format": "{short}"
+	},
+}
